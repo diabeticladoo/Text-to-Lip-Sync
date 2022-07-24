@@ -1,0 +1,77 @@
+<!doctype html>
+<title>Testing WAV-TO-LIPSYNC</title>
+<style>
+	body {
+		background-image: url('https://www.hdimages.pics/images/quotes/english/general/bokeh-effect-on-dark-background-52650-308200-960-540.jpg');
+		background-repeat: no-repeat;
+		/* background-position: center; */
+		background-size: cover;
+		/* height: 100%; */
+		text-align: center;
+		color:white;
+		font-size:30px;
+	}
+	h2{
+		
+		font-size:50px;
+		text-align: center;
+	}
+	input{
+		  font-size:20px;
+	}
+	form{
+		width:100px;
+		height:40px;
+		text-align:start;
+		margin-left:45%;
+	}
+</style>
+<body>
+<h2 style="color:white;">Upload a video to test on:</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/uploadvd" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Upload">
+	</p>
+</form>
+</body>
+<!-- <!doctype html>
+<title>Testing WAV-TO-LIPSYNC</title>
+<h2>Upload a video to test on:</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/uploadvd" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Upload">
+	</p>
+</form>
+ -->
